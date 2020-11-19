@@ -6,4 +6,5 @@ read -p "Enter value for c" c
 
 compute1=$(( $a + $b * $c ))
 compute2=$(( $a * $b + $c ))
-echo $compute1 $compute2
+compute3=$(( $c + $a / $b ))
+echo $compute1 $compute2 $compute3
