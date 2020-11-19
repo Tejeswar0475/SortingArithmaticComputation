@@ -4,8 +4,10 @@ read -p "Enter value for a" a
 read -p "Enter value for b" b
 read -p "Enter value for c" c
 
-compute1=$(( $a + $b * $c ))
-compute2=$(( $a * $b + $c ))
-compute3=$(( $c + $a / $b ))
-compute4=$(( $a % $b + $c ))
-echo $compute1 $compute2 $compute3 $compute4
+declare -A dict
+dict[0]=$(( $a + $b * $c ))
+dict[1]=$(( $a * $b + $c ))
+dict[2]=$(( $c + $a / $b ))
+dict[3]=$(( $a % $b + $c ))
+echo "result=" ${dict[@]}
+echo "count of dictionary values" ${#dict[@]}
