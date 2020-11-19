@@ -18,7 +18,19 @@ do
         echo "check for dict values store in array arr[$i]" ${arr[$i]}
 done
 
-
+for (( i = 0 ; i <= ${#dict[@]} ; i++ ))
+do
+       for (( j = $(( $i + 1 )) ; j <= ${#dict[@]} ; j++ ))
+        do
+                if [[ ${arr[i]} -le ${arr[j]} ]]
+                then
+                        temp=${arr[i]}
+                        arr[$i]=${arr[j]}
+                        arr[$j]=$temp
+               fi
+        done
+done
+echo "Descending order:" ${arr[@]}
 
 
 
